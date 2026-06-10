@@ -77,23 +77,23 @@ do { ChessDebug::debugLog(__VA_ARGS__); } while (false)
 #define CHESS_ASSERT(condition) \
 do { assert(condition); } while (false)
 
-#define CHESS_ASSERT_MSG(condition, message)                         \
-    do                                                               \
-{                                                                \
-        if (!(condition))                                            \
-    {                                                            \
-            CHESS_DEBUG_LOG(                                         \
-                                                                     "ASSERT FAILED: ",                                  \
-                                                                     message,                                             \
-                                                                     " | Condition: ",                                   \
-#condition,                                          \
-                                                                     " | File: ",                                        \
-                                                                     __FILE__,                                            \
-                                                                     " | Line: ",                                        \
-                                                                     __LINE__                                             \
-                );                                                       \
-            assert(condition);                                       \
-    }                                                            \
+#define CHESS_ASSERT_MSG(condition, message)    \
+    do                                          \
+{                                               \
+        if (!(condition))                       \
+    {                                           \
+            CHESS_DEBUG_LOG(                    \
+                            "ASSERT FAILED: ",  \
+                             message,           \
+                            " | Condition: ",   \
+#condition,                                     \
+                            " | File: ",        \
+                            __FILE__,           \
+                            " | Line: ",        \
+                            __LINE__            \
+                );                              \
+            assert(condition);                  \
+    }                                           \
 } while (false)
 
 #else
